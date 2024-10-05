@@ -13,3 +13,4 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --without test
 
 CMD ["poetry", "run", "uvicorn", "core.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
