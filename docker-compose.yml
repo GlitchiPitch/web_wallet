@@ -1,9 +1,18 @@
 services:
   wallet_db:
-    image: postgres
+    image: postgres:14.3-alpine
     environment:
       POSTGRES_DB: wallet_db
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+
+  wallet_db_test:
+    image: postgres:14.3-alpine
+    environment:
+      POSTGRES_DB: wallet_db_test
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5433"
